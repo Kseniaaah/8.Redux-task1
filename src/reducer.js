@@ -25,7 +25,10 @@ export const reducer = (state = initialState, { type, payload }) => {
 				isDraw: true,
 			};
 		case 'RESTART_GAME':
-			return initialState;
+			return {
+				...initialState,
+				field: Array(9).fill(''),
+      		};
 		case 'SET_GAME_ENDED':
 			return {
 				...state,
